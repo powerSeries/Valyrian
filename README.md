@@ -18,8 +18,8 @@ is to be the last man standing.
 # Sprint 1
 
 - Product Backlog
-- Sprint Backlog
-  - Burndown Chart
+- [Sprint Backlog](https://valyrian.myjetbrains.com/youtrack/agiles/103-2/104-2?backlog)
+  - [Burndown Chart](https://valyrian.myjetbrains.com/youtrack/agiles/103-2/104-2?chart)
 - Design Documents
 - Source Code
 - Test Cases
