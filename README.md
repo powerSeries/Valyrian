@@ -24,3 +24,13 @@ is to be the last man standing.
 - Source Code
 - Test Cases
 - [Product Demonstration](https://youtu.be/QbCcuO10zCs)
+
+# Sprint 2
+
+- [Product Backlog](https://docs.google.com/spreadsheets/d/1NJ3w4OmEa107pmdiB-9LuKJW2Jc6jOqnqPaMKcuhT1o/edit?usp=sharing)
+- [Sprint Backlog](https://valyrian.myjetbrains.com/youtrack/agiles/103-2/104-3)
+  - [Burndown Chart](https://valyrian.myjetbrains.com/youtrack/agiles/103-2/104-3?chart)
+- Design Documents
+- Source Code
+- Test Cases
+- Product Demonstration
