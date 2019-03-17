@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/joinGame_Scene.unity
     guid: 9822db1ca11f9de419a38729d2113f0b
+  - enabled: 1
+    path: Assets/Scenes/Arena.unity
+    guid: b3897dafc0f5e4b4eb0b6b8f96efd8d6
   m_configObjects: {}
