@@ -29,6 +29,7 @@ X-axis and Z-axis.
 | Press 'esc' key in order to make the mouse appear | You should see the cursor reappear on your screen |
 | Press the play button at the top again to stop the game | Unity will then stop the game and put the player model back to the original position |
 
+[Back to the top](#Test-Approach)
 
 ## Test Jumping
 
@@ -48,6 +49,7 @@ This test is for checking to see if the player model is able to jump properly. B
 | Press 'esc' key in order to make the mouse appear | You should see the cursor reappear on your screen |
 | Press the play button at the top again to stop the game | Unity will then stop the game and put the player model back to the original position |
 
+[Back to the top](#Test-Approach)
 
 ## Test Mouse Movement
 
@@ -67,6 +69,8 @@ This test is for checking to see if the mouse movement is correct. The mouse sho
 | Press 'esc' key in order to make the mouse appear | You should see the cursor reappear on your screen |
 | Press the play button at the top again to stop the game | Unity will then stop the game and put the player model back to the original position |
 
+[Back to the top](#Test-Approach)
+
 ## Test Picking Up Items
 
 This test is for checking to see if the player is able to pick up the ammo and shield packs. These items will be located around in the area of the level for players to pick up. It should also
@@ -85,3 +89,5 @@ update the text of the amount of ammo/shield the player carrying on the screen.
 | When you find a shield pack/ammo pack walk over it to collect it | When you walk over a shield pack you should see the shield value increase by 25; When you walk over a ammo pack you should see the amount of ammo increase by 20 |
 | Press 'esc' key in order to make the mouse appear | You should see the cursor reappear on your screen |
 | Press the play button at the top again to stop the game | Unity will then stop the game and put the player model back to the original position |
+
+[Back to the top](#Test-Approach)
