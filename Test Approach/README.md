@@ -91,3 +91,60 @@ update the text of the amount of ammo/shield the player carrying on the screen.
 | Press the play button at the top again to stop the game | Unity will then stop the game and put the player model back to the original position |
 
 [Back to the top](#Test-Approach)
+
+## Test Create Game Button
+
+This test is for checking the create game button on the main menu. The button should take you to the "CreateGame" screen.
+
+| Action | Observations |
+|--------|--------------|
+| Double click on the Unity icon | Should open a window that has the list of projects available to open |
+| Click on the project that says "Valyrian Game" | Unity should begin to load all the assets that is associated with that project |
+| Under the Project tab click the folder named "Scenes" | You should see the different scenes that the project has access to |
+| Double click on the scene titled "Title_Scene" | The title screen should load with "VALYRIAN" written across the top and the two buttons underneath it. |
+| Click the little play icon at the top center of the screen | Unity should enter play mode and the view should change to game view. |
+| Click the button with the words "Create game" written on it. | the title screen should change to the create game scene, with "Create Game" written along the top and a text field box in the center of the screen. |
+
+## Test Join Game Button
+
+This test is for checking the join game button on the main menu. The button should take you to the "JoinGame" screen.
+
+| Action | Observations |
+|--------|--------------|
+| Double click on the Unity icon | Should open a window that has the list of projects available to open |
+| Click on the project that says "Valyrian Game" | Unity should begin to load all the assets that is associated with that project |
+| Under the Project tab click the folder named "Scenes" | You should see the different scenes that the project has access to |
+| Double click on the scene titled "Title_Scene" | The title screen should load with "VALYRIAN" written across the top and the two buttons underneath it. |
+| Click the little play icon at the top center of the screen | Unity should enter play mode and the view should change to game view. |
+| Click the button with the words "Join Game" written on it. | the title screen should change to the join game scene, with "Join Game" written along the top and a text field box in the center of the screen. |
+
+## Test Create Game Screen
+
+This test is for checking that the text input field works, and that the create and back buttons work as well. There is currently no use for the text box, it is a placeholder for future functionality.
+
+| Action | Observations |
+|--------|--------------|
+| Double click on the Unity icon | Should open a window that has the list of projects available to open |
+| Click on the project that says "Valyrian Game" | Unity should begin to load all the assets that is associated with that project |
+| Under the Project tab click the folder named "Scenes" | You should see the different scenes that the project has access to |
+| Double click on the scene titled "createGame_Scene" | The title screen should load with "CREATE GAME" written across the top and the text field underneath it. |
+| Click on the back button. | The title screen should load and you should see the title "VALYRIAN" written across the top as well as the two buttons underneath it, create game and join game. |
+| Click on the "create game" button.| The create game screen should load again. |
+| Enter "Room Code" into the text field.| The words "Room Code" should appear in the text field as you type. |
+| Click the create button. | This should load the Arena scene, and you should be loaded in as a playable character. |
+
+## Test Join Game Screen
+
+This test is for checking that the text input field works, and that the join and back buttons work as well. There is currently no use for the text box, it is a placeholder for future functionality.
+
+| Action | Observations |
+|--------|--------------|
+| Double click on the Unity icon | Should open a window that has the list of projects available to open |
+| Click on the project that says "Valyrian Game" | Unity should begin to load all the assets that is associated with that project |
+| Under the Project tab click the folder named "Scenes" | You should see the different scenes that the project has access to |
+| Double click on the scene titled "joinGame_Scene" | The title screen should load with "JOIN GAME" written across the top and the text field underneath it. |
+| Click on the back button. | The title screen should load and you should see the title "VALYRIAN" written across the top as well as the two buttons underneath it, create game and join game. |
+| Click on the "join game" button.| The join game screen should load again. |
+| Enter "Room Code" into the text field.| The words "Room Code" should appear in the text field as you type. |
+| Click the join button. | This should only make the join button get a little darker. Future functionality to come. |
+
