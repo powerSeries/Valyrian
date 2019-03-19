@@ -33,4 +33,4 @@ is to be the last man standing.
 - [UML Class Diagram](https://drive.google.com/file/d/1o8VDXDMizd7XaXiN0sHYLJVWjnXxRLBb/view?usp=sharing)
 - [Source Code](https://github.com/powerSeries/Valyrian/tree/master/Valyrian%20Game/Assets/src)
 - [Test Cases](https://github.com/powerSeries/Valyrian/tree/develop/Test%20Approach)
-- [Product Demonstration](https://www.youtube.com/upload?redirect_to_creator=true&fr=2)
+- [Product Demonstration](https://www.youtube.com/watch?v=5HELV9ZQR_0&feature=youtu.be)
