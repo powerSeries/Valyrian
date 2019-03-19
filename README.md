@@ -31,6 +31,6 @@ is to be the last man standing.
 - [Sprint Backlog](https://valyrian.myjetbrains.com/youtrack/agiles/103-2/104-3)
   - [Burndown Chart](https://valyrian.myjetbrains.com/youtrack/agiles/103-2/104-2?chart)
 - [UML Class Diagram](https://drive.google.com/file/d/1o8VDXDMizd7XaXiN0sHYLJVWjnXxRLBb/view?usp=sharing)
-- Source Code
+- [Source Code](https://github.com/powerSeries/Valyrian/tree/master/Valyrian%20Game/Assets/src)
 - [Test Cases](https://github.com/powerSeries/Valyrian/tree/develop/Test%20Approach)
-- Product Demonstration
+- [Product Demonstration](https://www.youtube.com/upload?redirect_to_creator=true&fr=2)
