@@ -20,7 +20,7 @@ is to be the last man standing.
 - [Product Backlog](https://docs.google.com/spreadsheets/d/1NJ3w4OmEa107pmdiB-9LuKJW2Jc6jOqnqPaMKcuhT1o/edit?usp=sharing)
 - [Sprint Backlog](https://valyrian.myjetbrains.com/youtrack/agiles/103-2/104-2?backlog)
   - [Burndown Chart](https://valyrian.myjetbrains.com/youtrack/agiles/103-2/104-2?chart)
-- Design Documents
+- [UML Class Diagram](https://drive.google.com/file/d/1o8VDXDMizd7XaXiN0sHYLJVWjnXxRLBb/view?usp=sharing)
 - Source Code
 - Test Cases
 - [Product Demonstration](https://youtu.be/QbCcuO10zCs)
@@ -30,7 +30,7 @@ is to be the last man standing.
 - [Product Backlog](https://docs.google.com/spreadsheets/d/1NJ3w4OmEa107pmdiB-9LuKJW2Jc6jOqnqPaMKcuhT1o/edit?usp=sharing)
 - [Sprint Backlog](https://valyrian.myjetbrains.com/youtrack/agiles/103-2/104-3)
   - [Burndown Chart](https://valyrian.myjetbrains.com/youtrack/agiles/103-2/104-2?chart)
-- Design Documents
-- Source Code
+- [UML Class Diagram](https://drive.google.com/file/d/1o8VDXDMizd7XaXiN0sHYLJVWjnXxRLBb/view?usp=sharing)
+- [Source Code](https://github.com/powerSeries/Valyrian/tree/master/Valyrian%20Game/Assets/src)
 - [Test Cases](https://github.com/powerSeries/Valyrian/tree/develop/Test%20Approach)
-- Product Demonstration
+- [Product Demonstration](https://www.youtube.com/watch?v=5HELV9ZQR_0&feature=youtu.be)
