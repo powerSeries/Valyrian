@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class ColliderController : MonoBehaviour
 {
+    //MAX amount of Shield a player can have
+    private const int MAX_SHIELD = 100;
+    private const int SHIELD_AMOUNT = 25;
+    private const int AMMO_AMOUNT = 20;
+
     //text object to display ammo amount
     public Text ammoText;
 
@@ -14,6 +19,9 @@ public class ColliderController : MonoBehaviour
     //counters for the ammo/shield amount
     private int ammoCount;
     private int shieldCount;
+
+    //Checks to see if the player shield is full
+    private bool IsShieldFull;
 
     // Start is called before the first frame update
     void Start()
@@ -41,17 +49,45 @@ public class ColliderController : MonoBehaviour
     /// <param name="other"></param>
     void OnTriggerEnter(Collider other)
     {
+        SetIsFull();
+
         if (other.gameObject.CompareTag("Ammo"))
         {
             other.gameObject.SetActive(false);
-            ammoCount += 20;
+            ammoCount += AMMO_AMOUNT;
             SetCountText(other.tag);
         }
-        else if (other.gameObject.CompareTag("Shield"))
+        
+        if(!IsShieldFull)
         {
-            other.gameObject.SetActive(false);
-            shieldCount += 25;
-            SetCountText(other.tag);
+            if (other.gameObject.CompareTag("Shield"))
+            {
+                other.gameObject.SetActive(false);
+                ShieldCalculator(shieldCount);
+                SetCountText(other.tag);
+            }
+        }
+    }
+
+    /// <summary>
+    /// This functions helps with the possiblity of players going
+    /// over the limit that we have set on the shield. By calculating
+    /// how much the player needs to reach the MAX shield amount we can 
+    /// determine when to give them the full amount of the shield or just
+    /// give them enough to get them to the MAX.
+    /// </summary>
+    /// <param name="shieldCount"></param>
+    void ShieldCalculator(int currentShield)
+    {
+        int differenceToFull = Mathf.Abs(currentShield - MAX_SHIELD);
+
+        if(differenceToFull >= SHIELD_AMOUNT)
+        {
+            shieldCount += SHIELD_AMOUNT;
+        }
+        else if (differenceToFull < SHIELD_AMOUNT)
+        {
+            shieldCount += differenceToFull;
         }
     }
 
@@ -72,5 +108,22 @@ public class ColliderController : MonoBehaviour
         {
             shieldText.text = shieldCount.ToString();
         }
+    }
+
+    /// <summary>
+    /// This functions checks if the player is already at the
+    /// max amount of shield that they can have. 
+    /// </summary>
+    void SetIsFull()
+    {
+        if (shieldCount >= MAX_SHIELD)
+        {
+            IsShieldFull = true;
+        }
+        else
+        {
+            IsShieldFull = false;
+        }
+            
     }
 }
