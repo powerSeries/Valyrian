@@ -15,6 +15,7 @@ public class ColliderController : MonoBehaviour
 
     //text object to display shield amount
     public Text shieldText;
+    public Image currentShieldBar;
 
     //counters for the ammo/shield amount
     private int ammoCount;
@@ -33,10 +34,14 @@ public class ColliderController : MonoBehaviour
         shieldCount = 0;
 
         //changes the value of the text to current ammo amount
+
         SetCountText("Ammo");
 
-        //changes the value of the text to current shield amount
-        SetCountText("Shield");
+
+
+        UpdateHealthBar();
+
+        
     }
 
     /// <summary>
@@ -64,9 +69,21 @@ public class ColliderController : MonoBehaviour
             {
                 other.gameObject.SetActive(false);
                 ShieldCalculator(shieldCount);
+                UpdateHealthBar();
                 SetCountText(other.tag);
             }
+
+            
         }
+    }
+
+    void UpdateHealthBar()
+    {
+        float ratio = (float) shieldCount / MAX_SHIELD;
+        
+        currentShieldBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
+
+        shieldText.text = (ratio * 100).ToString("0");
     }
 
     /// <summary>
@@ -104,9 +121,9 @@ public class ColliderController : MonoBehaviour
         {
             ammoText.text = ammoCount.ToString();
         }
-        else if (tag == "Shield")
+        if (tag == "Shield")
         {
-            shieldText.text = shieldCount.ToString();
+            shieldText.text = shieldCount.ToString("0");
         }
     }
 
