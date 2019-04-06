@@ -22,6 +22,10 @@
 
 | Class | Description |
 |:------|:------------|
-
+|Scene Controller| The scene controller allows us to change between create room menu and the join room menu. Without this class we would not be able to create the Arena where the players need to load in to.|
+|Collider Controller| This class allows the player to collect both shield packs and ammo packs. It also keeps track of the amount of shield that the player has so that they don't exceed the set limit of 100. It also helps with displaying clearly onto the screen how much ammo/shield you have.|
+|First Person Controller| This is essential to the player object. This class controls all the movement for the player (walking, sprinting, jumping, and looking around).|
+|AutoGunMechanics| This class is used for the weapons to be able to fire and be able to see where the bullets are going. The gun will fire as if were a automatic rifle.|
+|SemGunMehanics|This class is used for the weapons to be able to fire and be able to see where the bullets are going. The gun will fire as if were a semi-automatic rifle.|
 
 
