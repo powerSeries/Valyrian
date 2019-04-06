@@ -33,3 +33,9 @@
 # Data Design
 
 For this game we are not using any database to store any of objects. All the objects are stored within the Unity project. We also store values such as health, ammo, and shield within GameObjects. We are implementing a server that just establish a connection between other players and it loads the level with the player(s). We also are not storing any of the player information, so each time you play the game you are loading into the a new model with no previous information saved.
+
+# Business Rules
+
+- Players are not allowed to regenerate health, but can gain shield instantly.
+- 
+
