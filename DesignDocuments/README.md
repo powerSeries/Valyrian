@@ -1,6 +1,6 @@
-# Program Organization
+# Class Diagram
 
-![High Level Architecture](https://github.com/powerSeries/Valyrian/blob/develop/DesignDocuments/high_level.png)
+![Class Diagram](https://github.com/powerSeries/Valyrian/blob/develop/DesignDocuments/high_level.png)
 
 | Component | Description | Story ID |
 |:----------|:------------|:--------:|
