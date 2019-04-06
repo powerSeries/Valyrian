@@ -16,4 +16,12 @@
 |AutoGunMechanics| This script is used to simulate a automatic rifle in the game. It also has animation and sound that is played whenever the gun is firing.|VN21|
 |SemiGunMehanics| This is very similar to the AutoGunMechanic class except this one is used to simulate a rifle that fires based on the speed that you can press the left mouse click.|VN21|
 |RayViewer| This class is used to see if we are displaying a Ray correctly within the scene that we are in. As well as being able to see if the ray is appearing at the correct position from the gun and traveling the correct range|VN21|
+|ItemSpawn| This is an empty object that turns into the object that itemPrefab is set to. This is used to be able to spawn either a ammo pack or a shield pack within the level.|VN7 VN6 VN10|
+
+# Major Classes
+
+| Class | Description |
+|:------|:------------|
+
+
 
