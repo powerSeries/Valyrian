@@ -34,3 +34,13 @@ is to be the last man standing.
 - [Source Code](https://github.com/powerSeries/Valyrian/tree/master/Valyrian%20Game/Assets/src)
 - [Test Cases](https://github.com/powerSeries/Valyrian/tree/develop/Test%20Approach)
 - [Product Demonstration](https://www.youtube.com/watch?v=5HELV9ZQR_0&feature=youtu.be)
+
+# Sprint 3
+
+- [Product Backlog](https://docs.google.com/spreadsheets/d/1NJ3w4OmEa107pmdiB-9LuKJW2Jc6jOqnqPaMKcuhT1o/edit?usp=sharing)
+- [Sprint Backlog](https://valyrian.myjetbrains.com/youtrack/agiles/103-2/104-4)
+  - [Burndown Chart](https://valyrian.myjetbrains.com/youtrack/agiles/103-2/104-4?chart)
+- [Design Documents](https://github.com/powerSeries/Valyrian/tree/develop/DesignDocuments)
+- [Source Code](https://github.com/powerSeries/Valyrian/tree/master/Valyrian%20Game/Assets/src)
+- [Test Cases](https://github.com/powerSeries/Valyrian/tree/develop/Test%20Approach)
+- [Product Demonstration](https://www.youtube.com/watch?v=5HELV9ZQR_0&feature=youtu.be)
