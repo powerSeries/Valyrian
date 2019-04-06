@@ -26,7 +26,8 @@
 |Collider Controller| This class allows the player to collect both shield packs and ammo packs. It also keeps track of the amount of shield that the player has so that they don't exceed the set limit of 100. It also helps with displaying clearly onto the screen how much ammo/shield you have.|
 |First Person Controller| This is essential to the player object. This class controls all the movement for the player (walking, sprinting, jumping, and looking around).|
 |AutoGunMechanics| This class is used for the weapons to be able to fire and be able to see where the bullets are going. The gun will fire as if were a automatic rifle.|
-|SemGunMehanics|This class is used for the weapons to be able to fire and be able to see where the bullets are going. The gun will fire as if were a semi-automatic rifle.|
+|SemiGunMehanics|This class is used for the weapons to be able to fire and be able to see where the bullets are going. The gun will fire as if were a semi-automatic rifle.|
+|ItemSpawn|This is an empty object that turns into the object that itemPrefab is set to. This is used to be able to spawn either a ammo pack or a shield pack within the level.|
 
 
 # Data Design
