@@ -1,3 +1,3 @@
 # Program Organization
 
-![High Level Architecture](HighLevelArchitecture.png)
+![High Level Architecture](https://github.com/powerSeries/Valyrian/blob/develop/DesignDocuments/HighLevelArchitecture.PNG)
