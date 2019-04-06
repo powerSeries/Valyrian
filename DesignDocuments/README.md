@@ -1,6 +1,6 @@
 # Class Diagram
 
-![Class Diagram](https://github.com/powerSeries/Valyrian/blob/develop/DesignDocuments/high_level.png)
+![Class Diagram](https://github.com/powerSeries/Valyrian/blob/develop/DesignDocuments/Class%20Diagram.png)
 
 | Component | Description | Story ID |
 |:----------|:------------|:--------:|
