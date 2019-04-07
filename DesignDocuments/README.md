@@ -1,4 +1,17 @@
-# Class Diagram
+# Design Documents
+
+- [Program Organization](#Program-Organization)
+- [Class Diagram](#Class-Diagram)
+- [Major Classes](#Major-Classes)
+- [Data Design](#Data-Design)
+- [Business Rules](#Business-Rules)
+
+
+## Program Organization
+
+[Back to top](#Design-Documents)
+
+## Class Diagram
 
 ![Class Diagram](https://github.com/powerSeries/Valyrian/blob/develop/DesignDocuments/Class%20Diagram.png)
 
@@ -18,6 +31,8 @@
 |RayViewer| This class is used to see if we are displaying a Ray correctly within the scene that we are in. As well as being able to see if the ray is appearing at the correct position from the gun and traveling the correct range|VN21|
 |ItemSpawn| This is an empty object that turns into the object that itemPrefab is set to. This is used to be able to spawn either a ammo pack or a shield pack within the level.|VN7 VN6 VN10|
 
+[Back to top](#Design-Documents)
+
 # Major Classes
 
 | Class | Description |
@@ -29,12 +44,15 @@
 |SemiGunMehanics|This class is used for the weapons to be able to fire and be able to see where the bullets are going. The gun will fire as if were a semi-automatic rifle.|
 |ItemSpawn|This is an empty object that turns into the object that itemPrefab is set to. This is used to be able to spawn either a ammo pack or a shield pack within the level.|
 
+[Back to top](#Design-Documents)
 
-# Data Design
+## Data Design
 
 For this game we are not using any database to store any of objects. All the objects are stored within the Unity project. We also store values such as health, ammo, and shield within GameObjects. We are implementing a server that just establish a connection between other players and it loads the level with the player(s). We also are not storing any of the player information, so each time you play the game you are loading into the a new model with no previous information saved.
 
-# Business Rules
+[Back to top](#Design-Documents)
+
+## Business Rules
 
 - Players are not allowed to regenerate health, but they can gain shield instantly. The reason for this was so when a player gets damaged they arent able to fully regenerate their health to 100%. We took this idea of not being able to regenerate health from CS:GO where the player cannot restore their own health throughout a round. So if a player wanted to gain 100 shield they would have to go search for the shield pack without encountering another player. 
   
@@ -44,4 +62,5 @@ For this game we are not using any database to store any of objects. All the obj
 
 - Players are not allowed to bunny hop (B-hop), this is a technique that is used by exploiting the way physics engine works in various games. In CS:GO it preserves forward momentum and by jumping and strafing left and right when you jump you can increase your speed and be able to traverse the map faster. 
 
+[Back to top](#Design-Documents)
 
