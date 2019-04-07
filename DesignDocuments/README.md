@@ -34,7 +34,7 @@
 
 [Back to top](#Design-Documents)
 
-# Major Classes
+## Major Classes
 
 | Class | Description |
 |:------|:------------|
