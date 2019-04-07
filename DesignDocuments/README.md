@@ -34,7 +34,7 @@
 
 [Back to top](#Design-Documents)
 
-# Major Classes
+## Major Classes
 
 | Class | Description |
 |:------|:------------|
@@ -67,6 +67,8 @@ For this game we are not using any database to store any of objects. All the obj
 
 
 ## User Interface
+
+**Disclaimer DO NOT CLICK IMAGE TO MAKE BE ABLE TO READ!** Zoom-in at the current screen you are at (Ideal Zoom 200%). Image was made in Illustrator with wrong dimensions.
 
 ![User Interface](https://github.com/powerSeries/Valyrian/blob/develop/DesignDocuments/User%20Interface%20Diagram.png)
 
