@@ -10,7 +10,18 @@
 
 ## Program Organization
 
+In Valyrian, we will start at the Title Screen, from here we can chose between whether or not we want to create a game or join an existing game. Depending on what chosen you will go to either the Create Game Screen or Join Game Screen. If you choose to create a game, you will be taken to Create Game Screen and will be asked to enter a room code. The room code is used so that other players can join your lobby. It will connect to the Photon Server and create a Lobby for players to join. If you had chosen to join a game it will take you to the Join Game Screen and will ask you to type in the room code. From there it will check in the server if a existing room is running with that code in the server and if there is space for you to join. Now when you are in the lobby screen depeding on who is the host decides when to start the game. When the host starts the game everyone will dropped into the Main level where everyone will be battling it. Once the game ends you will be taken back to the title screen.
+
 ![High Level Architecture](https://github.com/powerSeries/Valyrian/blob/develop/DesignDocuments/High%20Level%20Architecture.png)
+
+|Architecture Component|User Story ID|
+|:---------------------|:-----------:|
+|Title Screen|VN-13 VN-16|
+|Create Game Screen|VN-12 VN-15 VN-16 VN-17|
+|Join Game Screen|VN-12 VN-14 VN-16|
+|Server|VN-12|
+|Lobby Screen|VN-12|
+|Main Game Screen|VN-1 VN-2 VN-6 VN-7 VN-8 VN-10 VN-21 VN-22 VN-23 VN-31|
 
 [Back to top](#Design-Documents)
 
