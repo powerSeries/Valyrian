@@ -90,5 +90,18 @@ For this game we are not using any database to store any of objects. All the obj
 
 ## Build-vs-Buy Decisions
 
+### ProBuilder
+
+Probuilder allows you to edit models within the editor with advanced features. It allows you to manipulate a list of objects any way that you want to. You extrude the object, subdivide some a face of the object. As well as being able to manipulate the object between either face of the object or its vertices. It also comes with some preset objects such as 'Stairs' it allows you to edit property of by determing how many steps you want the staircase to have. It has been very useful in creating the main building that is located at the certain of the level. 
+
+### Photon Server
+
+### Ensenasoft
+
+Is a set of pre-made buildings that are used to fill the map with other structure to give players some cover.
+
+### LowPolyNaturePackLite
+
+Is a set of pre-made objects that are supposed to resemeble things you would find in nature. The pack includes various types of trees, bushes, some trees without any leaves on them. It also includes some objects that do not have the any material on them for you to apply your own texture.
 
 [Back to top](#Design-Documents)
