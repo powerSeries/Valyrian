@@ -87,10 +87,10 @@ update the text of the amount of ammo/shield the player carrying on the screen.
 | Under the Project tab click the folder named "Scenes" | You should see the different scenes that the project has access to |
 | Double-click on the scene named "Arena" | On your screen you should see many objects in the scene and a big building in the model |
 | At the top click the play button | This should begin the game and you will have control of the player model |
-| At the bottom center you should see a black text with the value '0' | This shows the amount of shield that you have access to |
-| At the bottom left corner you should see a black text with the value '0' | This shows the amount of ammo you have available to use |
+| At the bottom center you should see a black bar that has a value '0' on the left of it | This shows the amount of shield that you have access to currently|
+| At the bottom left corner you should see a orange-ish text with the value '0' | This shows the amount of ammo you have available to use |
 | Begin to search for a shield or ammo pack | Shield packs is a cylindrical object and the ammo pack is a rectangular object. Both of them are floating for ease of searching |
-| When you find a shield pack/ammo pack walk over it to collect it | When you walk over a shield pack you should see the shield value increase by 25; When you walk over a ammo pack you should see the amount of ammo increase by 20 |
+| When you find a shield pack/ammo pack walk over it to collect it | When you walk over a shield pack you should see the black bar begin to fill with a baby blue color and the value on the left be increased by 25; When you walk over a ammo pack you should see the amount of ammo increase by 20 |
 | Press 'esc' key in order to make the mouse appear | You should see the cursor reappear on your screen |
 | Press the play button at the top again to stop the game | Unity will then stop the game and put the player model back to the original position |
 
