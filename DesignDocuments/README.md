@@ -6,6 +6,7 @@
 - [Data Design](#Data-Design)
 - [Business Rules](#Business-Rules)
 - [User Interface](#User-Interface)
+- [Build-vs-Buy Decisions](#Build-vs-Buy-Decisions)
 
 
 ## Program Organization
@@ -84,5 +85,10 @@ For this game we are not using any database to store any of objects. All the obj
 **Disclaimer DO NOT CLICK IMAGE TO BE ABLE TO READ!** Zoom-in at the current screen you are at (Ideal Zoom 200%). Image was made in Illustrator with wrong dimensions.
 
 ![User Interface](https://github.com/powerSeries/Valyrian/blob/develop/DesignDocuments/User%20Interface%20Diagram.png)
+
+[Back to top](#Design-Documents)
+
+## Build-vs-Buy Decisions
+
 
 [Back to top](#Design-Documents)
