@@ -4,6 +4,10 @@
 - [Test Jumping](#Test-Jumping)
 - [Test Mouse Movement](#Test-Mouse-Movement)
 - [Test Picking up Items](#Test-Picking-Up-Items)
+- [Test Create Game Button](#Test-Create-Game-Button)
+- [Test Join Game Button](#Test-Join-Game-Button)
+- [Test Create Game Screen](#Test-Create-Game-Screen)
+- [Test Join Game Screen](#Test-Join-Game-Screen)
 
 
 
@@ -105,6 +109,8 @@ This test is for checking the create game button on the main menu. The button sh
 | Click the little play icon at the top center of the screen | Unity should enter play mode and the view should change to game view. |
 | Click the button with the words "Create game" written on it. | the title screen should change to the create game scene, with "Create Game" written along the top and a text field box in the center of the screen. |
 
+[Back to the top](#Test-Approach)
+
 ## Test Join Game Button
 
 This test is for checking the join game button on the main menu. The button should take you to the "JoinGame" screen.
@@ -117,6 +123,8 @@ This test is for checking the join game button on the main menu. The button shou
 | Double click on the scene titled "Title_Scene" | The title screen should load with "VALYRIAN" written across the top and the two buttons underneath it. |
 | Click the little play icon at the top center of the screen | Unity should enter play mode and the view should change to game view. |
 | Click the button with the words "Join Game" written on it. | the title screen should change to the join game scene, with "Join Game" written along the top and a text field box in the center of the screen. |
+
+[Back to the top](#Test-Approach)
 
 ## Test Create Game Screen
 
@@ -133,6 +141,8 @@ This test is for checking that the text input field works, and that the create a
 | Enter "Room Code" into the text field.| The words "Room Code" should appear in the text field as you type. |
 | Click the create button. | This should load the Arena scene, and you should be loaded in as a playable character. |
 
+[Back to the top](#Test-Approach)
+
 ## Test Join Game Screen
 
 This test is for checking that the text input field works, and that the join and back buttons work as well. There is currently no use for the text box, it is a placeholder for future functionality.
@@ -147,4 +157,6 @@ This test is for checking that the text input field works, and that the join and
 | Click on the "join game" button.| The join game screen should load again. |
 | Enter "Room Code" into the text field.| The words "Room Code" should appear in the text field as you type. |
 | Click the join button. | This should only make the join button get a little darker. Future functionality to come. |
+
+[Back to the top](#Test-Approach)
 
