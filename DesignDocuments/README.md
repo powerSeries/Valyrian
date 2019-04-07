@@ -5,6 +5,7 @@
 - [Major Classes](#Major-Classes)
 - [Data Design](#Data-Design)
 - [Business Rules](#Business-Rules)
+- [User Interface](#User-Interface)
 
 
 ## Program Organization
@@ -64,3 +65,9 @@ For this game we are not using any database to store any of objects. All the obj
 
 [Back to top](#Design-Documents)
 
+
+## User Interface
+
+![User Interface](https://github.com/powerSeries/Valyrian/blob/develop/DesignDocuments/User%20Interface%20Diagram.png)
+
+[Back to top](#Design-Documents)
