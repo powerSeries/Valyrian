@@ -36,12 +36,12 @@ For this game we are not using any database to store any of objects. All the obj
 
 # Business Rules
 
-Players are not allowed to regenerate health, but they can gain shield instantly. The reason for this was so when a player gets damaged they arent able to fully regenerate their health to 100%. We took this idea of not being able to regenerate health from CS:GO where the player cannot restore their own health throughout a round. So if a player wanted to gain 100 shield they would have to go search for the shield pack without encountering another player. 
+- Players are not allowed to regenerate health, but they can gain shield instantly. The reason for this was so when a player gets damaged they arent able to fully regenerate their health to 100%. We took this idea of not being able to regenerate health from CS:GO where the player cannot restore their own health throughout a round. So if a player wanted to gain 100 shield they would have to go search for the shield pack without encountering another player. 
   
-The ammo a player collects works across all guns. In most games you have to find ammos specific to the weapon that you find, so in games like Fortnite or Call of Duty if you find a shotgun you have to find shotgun shells for it. This gives player extra stress about being careful with the current resources they have. By removing that stress the player can focus more on the game. 
+- The ammo a player collects works across all guns. In most games you have to find ammos specific to the weapon that you find, so in games like Fortnite or Call of Duty if you find a shotgun you have to find shotgun shells for it. This gives player extra stress about being careful with the current resources they have. By removing that stress the player can focus more on the game. 
 
-Player are not allowed to ADS (Aim Down Sight) on the weapon they are holding. This is something that is used throughout the Counter-Strike series, it adds a different level of skill when not being able to ADS that we wanted to recreate.
+- Player are not allowed to ADS (Aim Down Sight) on the weapon they are holding. This is something that is used throughout the Counter-Strike series, it adds a different level of skill when not being able to ADS that we wanted to recreate.
 
-Players are not allowed to bunny hop (B-hop), this is a technique that is used by exploiting the way physics engine works in various games. In CS:GO it preserves forward momentum and by jumping and strafing left and right when you jump you can increase your speed and be able to traverse the map faster. 
+- Players are not allowed to bunny hop (B-hop), this is a technique that is used by exploiting the way physics engine works in various games. In CS:GO it preserves forward momentum and by jumping and strafing left and right when you jump you can increase your speed and be able to traverse the map faster. 
 
 
