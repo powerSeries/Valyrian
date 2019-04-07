@@ -10,6 +10,8 @@
 
 ## Program Organization
 
+![High Level Architecture](https://github.com/powerSeries/Valyrian/blob/develop/DesignDocuments/High%20Level%20Architecture.png)
+
 [Back to top](#Design-Documents)
 
 ## Class Diagram
