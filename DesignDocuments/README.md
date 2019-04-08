@@ -6,6 +6,12 @@
 - [Data Design](#Data-Design)
 - [Business Rules](#Business-Rules)
 - [User Interface](#User-Interface)
+- [Security](#Security)
+- [Performance](#Performance)
+- [Scalability](#Scalability)
+- [Interoperability](#Interoperability)
+- [Input/Output](#Input/Output)
+- [Error Processing](#Error-Processing)
 - [Build-vs-Buy Decisions](#Build-vs-Buy-Decisions)
 
 
@@ -85,6 +91,49 @@ For this game we are not using any database to store any of objects. All the obj
 ![User Interface](https://github.com/powerSeries/Valyrian/blob/develop/DesignDocuments/User%20Interface%20Diagram.png)
 
 [Back to top](#Design-Documents)
+
+## Security
+
+N/A: Player information and collected data is stored on player’s own computer. Since gameplay is targeted towards casual interaction instead of regulated competitiveness, ensuring data is unmodified is not a priority.
+
+[Back to top](#Design-Documents)
+
+
+## Performance
+
+Valyrian Game runs smoothly while performing various animations and calculations. Up to 4 players should be able to interact without any noticeable drop in performance
+
+[Back to top](#Design-Documents)
+
+## Scalability
+
+The ability to handle more players and guns than originally developed should be made easy through generalized scripts that don’t need to be recoded or redone.
+
+[Back to top](#Design-Documents)
+
+## Interoperability
+
+4 players should be able to connect to a single server that places them in the same game. Each player’s game view is drawn in the same manner, and all actions made by the player in the game can be witnessed by the other players.
+
+[Back to top](#Design-Documents)
+
+## Input/Output
+
+Keyboard and mouse controls are taken for input. “Left-Mouse Button” should fire the weapon; “Right-Mouse Button” should aim down the iron sights of the gun; “r” should reload the gun if allowed; the “w,” “s,” “d,” and “a” keys direct travel; the “space bar” jumps; and “shift” increases the walking speed to running speed. In addition, the opening UI and game lobby will take inputs to join, create, start, and leave games. Input is taken to the server and returned to other players in the game as output, displaying the actions committed from the input.
+
+[Back to top](#Design-Documents)
+
+## Error Processing
+
+Majority of errors are handled through in-game testing.
+
+[Back to top](#Design-Documents)
+
+## Fault Tolerance
+
+Missing objects will allow the game to run. In the case of server connectivity or synchronous errors, the game should fail.
+
+[Back top top](#Design-Documents)
 
 ## Build-vs-Buy Decisions
 
