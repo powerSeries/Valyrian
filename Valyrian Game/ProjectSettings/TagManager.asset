@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Shield
+  - Ammo
+  - AK47
+  - M4A1
+  - M9
+  - SAR
   layers:
   - Default
   - TransparentFX
