@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class ColliderController : MonoBehaviour
 {
+    //List of possible weapons user can use 
+    public GameObject M4A1;
+    public GameObject AK47;
+    public GameObject SAR;
+    public GameObject M9;
+
     //MAX amount of Shield a player can have
     private const int MAX_SHIELD = 100;
     private const int SHIELD_AMOUNT = 25;
@@ -27,6 +33,9 @@ public class ColliderController : MonoBehaviour
     //Checks to see if the player shield is full
     private bool IsShieldFull;
 
+    //Checks to see if the player is colliding with a weapon
+    private bool IsWeapon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,11 +50,27 @@ public class ColliderController : MonoBehaviour
     }
 
     /// <summary>
+    /// Sets the Weapons attached the player model to be inactive this
+    /// is to ensure that no player starts with a weapon.
+    /// </summary>
+    void SetWeaponsInactive()
+    {
+        M4A1.SetActive(false);
+        AK47.SetActive(false);
+        SAR.SetActive(false);
+        M9.SetActive(false);
+    }
+
+    /// <summary>
     /// When a player collides with an object and that object has IsTrigger active.
     /// This function will run and will check the tag of the object and if
     /// it is 'Ammo' or 'Shield' it will increase the count of what that object
     /// represents by a fixed value. Then it will change what value is displayed on the
     /// screen.
+    /// 
+    /// It also checks if it is possible for a player to be able to pick up a weapon
+    /// This check was in place because of a occuring issue that when you pick up a shield or ammo
+    /// it would make your weapon disappear
     /// </summary>
     /// <param name="other"></param>
     void OnTriggerEnter(Collider other)
@@ -72,9 +97,55 @@ public class ColliderController : MonoBehaviour
                 SetCountText(other.tag);
             }
         }
+
+        if(WeaponCheck(other))
+        {
+            PossibleWeapon(other);
+        }
+        
+    }
+
+    /// <summary>
+    /// Used to check to see if the player is colliding with a weapon
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns></returns>
+    bool WeaponCheck(Collider other)
+    {
+        if (other.gameObject.CompareTag("M4A1") || other.gameObject.CompareTag("AK47") || other.gameObject.CompareTag("M9") || other.gameObject.CompareTag("SAR"))
+        {
+            return true;
+        }
+        else
+            return false;
     }
 
 
+    /// <summary>
+    /// This weapon determines which weapon to set as the active sweapon for the player
+    /// </summary>
+    /// <param name="weapon"></param>
+    void PossibleWeapon(Collider weapon)
+    {
+        SetWeaponsInactive();
+
+        if (weapon.gameObject.CompareTag("AK47"))
+        {
+            AK47.SetActive(true);
+        }
+        else if(weapon.gameObject.CompareTag("M4A1"))
+        {
+            M4A1.SetActive(true);
+        }
+        else if(weapon.gameObject.CompareTag("M9"))
+        {
+            M9.SetActive(true);
+        }
+        else if(weapon.gameObject.CompareTag("SAR"))
+        {
+            SAR.SetActive(true);
+        }
+    }
     /// <summary>
     /// This function changes the value of the amount of
     /// ammo or shield the player has. Depeding on the tag

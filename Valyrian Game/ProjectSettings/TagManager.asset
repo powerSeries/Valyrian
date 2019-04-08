@@ -6,10 +6,10 @@ TagManager:
   tags:
   - Shield
   - Ammo
+  - AK47
   - M4A1
-  - AK-47
-  - SAR
   - M9
+  - SAR
   layers:
   - Default
   - TransparentFX
