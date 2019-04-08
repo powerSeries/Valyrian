@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 167498729}
   - component: {fileID: 167498728}
   m_Layer: 5
-  m_Name: Image
+  m_Name: createTitleImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -927,7 +927,7 @@ GameObject:
   - component: {fileID: 2016836734}
   - component: {fileID: 2016836733}
   m_Layer: 5
-  m_Name: TextMeshPro - InputField
+  m_Name: roomCodeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
