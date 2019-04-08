@@ -8,6 +8,9 @@
 - [Test Join Game Button](#Test-Join-Game-Button)
 - [Test Create Game Screen](#Test-Create-Game-Screen)
 - [Test Join Game Screen](#Test-Join-Game-Screen)
+- [Test Picking Up Weapons](#Test-Picking-Up-Weapons)
+- [Test Firing a Weapon](#Test-Firing-a-Weapons)
+- [Test Aim Down Sight](#Test-Aim-Down-Sight)
 
 
 
@@ -91,6 +94,7 @@ update the text of the amount of ammo/shield the player carrying on the screen.
 | At the bottom left corner you should see a orange-ish text with the value '0' | This shows the amount of ammo you have available to use |
 | Begin to search for a shield or ammo pack | Shield packs is a cylindrical object and the ammo pack is a rectangular object. Both of them are floating for ease of searching |
 | When you find a shield pack/ammo pack walk over it to collect it | When you walk over a shield pack you should see the black bar begin to fill with a baby blue color and the value on the left be increased by 25; When you walk over a ammo pack you should see the amount of ammo increase by 20 |
+|Continue to collect shield packs| If you are already at 100, the amount of shield should NOT increase and the shield pack should NOT disappear when colliding with it|
 | Press 'esc' key in order to make the mouse appear | You should see the cursor reappear on your screen |
 | Press the play button at the top again to stop the game | Unity will then stop the game and put the player model back to the original position |
 
@@ -157,6 +161,66 @@ This test is for checking that the text input field works, and that the join and
 | Click on the "join game" button.| The join game screen should load again. |
 | Enter "Room Code" into the text field.| The words "Room Code" should appear in the text field as you type. |
 | Click the join button. | This should only make the join button get a little darker. Future functionality to come. |
+
+[Back to the top](#Test-Approach)
+
+## Test Picking Up Weapons
+
+The prupose of this test is to make sure that the player is able to pick up any weapon properly. The same way that the players are able to collect shield and ammo. 
+
+| Action |Observations|
+|--------|------------|
+| Double click on the Unity icon | Should open a window that has the list of projects available to open |
+| Click on the project that says "Valyrian Game" | Unity should begin to load all the assets that is associated with that project |
+| Under the Project tab click the folder named "Scenes" | You should see the different scenes that the project has access to |
+| In the "Scenes" folder click on the scene that is named Arena| You should see unity change the current scene to a scene with buildings and various objects ontop a plane|
+|Check on the left in the Hierarchy tab for a "Player Object Variant"| It should be located near the top of hierarchy|
+|At the top of the unity click the play button| It should beging to load in all the assets and soon let you move around|
+|Begin to search for weapons around the map| There should be various weapons scattered around the level|
+|Once you find one walk over it| After you finish walking over it you should see it appear on your screen on the right|
+| Press 'esc' key in order to make the mouse appear | You should see the cursor reappear on your screen |
+| Press the play button at the top again to stop the game | Unity will then stop the game and put the player model back to the original position |
+
+[Back to the top](#Test-Approach)
+
+## Test Firing a Weapons
+
+The purpose of this test is to make sure that the weapons are able to fire properly and display the bullet fire fromt he barrel of the gun. As well as being able to hear the sound the gun make when it is fired.
+
+| Action |Observations|
+|--------|------------|
+| Double click on the Unity icon | Should open a window that has the list of projects available to open |
+| Click on the project that says "Valyrian Game" | Unity should begin to load all the assets that is associated with that project |
+| Under the Project tab click the folder named "Scenes" | You should see the different scenes that the project has access to |
+| In the "Scenes" folder click on the scene that is named Arena| You should see unity change the current scene to a scene with buildings and various objects ontop a plane|
+|Check on the left in the Hierarchy tab for a "Player Object Variant"| It should be located near the top of hierarchy|
+|At the top of the unity click the play button| It should beging to load in all the assets and soon let you move around|
+|Begin to search for weapons around the map| There should be various weapons scattered around the level|
+|Once you find one walk over it| After you finish walking over it you should see it appear on your screen on the right|
+|On your mouse press the left click button| You should hear the weapon you are holding make a firing sound and also see a pink line appear on the screen. This indicates a bullet is fired|
+| Press 'esc' key in order to make the mouse appear | You should see the cursor reappear on your screen |
+| Press the play button at the top again to stop the game | Unity will then stop the game and put the player model back to the original position |
+
+[Back to the top](#Test-Approach)
+
+## Test Aiming Down Sight
+
+The purpose of this is to make sure the player can properly aim down the sight of any weapon they are holding.
+
+| Action |Observations|
+|--------|------------|
+| Double click on the Unity icon | Should open a window that has the list of projects available to open |
+| Click on the project that says "Valyrian Game" | Unity should begin to load all the assets that is associated with that project |
+| Under the Project tab click the folder named "Scenes" | You should see the different scenes that the project has access to |
+| In the "Scenes" folder click on the scene that is named Arena| You should see unity change the current scene to a scene with buildings and various objects ontop a plane|
+|Check on the left in the Hierarchy tab for a "Player Object Variant"| It should be located near the top of hierarchy|
+|At the top of the unity click the play button| It should beging to load in all the assets and soon let you move around|
+|Begin to search for weapons around the map| There should be various weapons scattered around the level|
+|Once you find one walk over it| After you finish walking over it you should see it appear on your screen on the right|
+|On your mouse press the right click button| You should see the weapon begin to move towards the center of your screen. As if you were looking down the sight.|
+|On your mouse press the left click button| You should hear the weapon you are holding make a firing sound and also see a pink line appear on the screen. This indicates a bullet is fired|
+| Press 'esc' key in order to make the mouse appear | You should see the cursor reappear on your screen |
+| Press the play button at the top again to stop the game | Unity will then stop the game and put the player model back to the original position |
 
 [Back to the top](#Test-Approach)
 
