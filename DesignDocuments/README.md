@@ -94,6 +94,8 @@ Probuilder allows you to edit models within the editor with advanced features. I
 
 ### Photon Server
 
+Allows us to add multiplayer capabilities to our game by providing us with a free server for us to load in our level and assets. It also is programmed to show player moments in real time, thus allowing for almost no latency between the player inputs and the server.
+
 ### Ensenasoft
 
 Is a set of pre-made buildings that are used to fill the map with other structure to give players some cover.
