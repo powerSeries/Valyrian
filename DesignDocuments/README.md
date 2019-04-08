@@ -73,8 +73,6 @@ For this game we are not using any database to store any of objects. All the obj
   
 - The ammo a player collects works across all guns. In most games you have to find ammos specific to the weapon that you find, so in games like Fortnite or Call of Duty if you find a shotgun you have to find shotgun shells for it. This gives player extra stress about being careful with the current resources they have. By removing that stress the player can focus more on the game. 
 
-- Player are not allowed to ADS (Aim Down Sight) on the weapon they are holding. This is something that is used throughout the Counter-Strike series, it adds a different level of skill when not being able to ADS that we wanted to recreate.
-
 - Players are not allowed to bunny hop (B-hop), this is a technique that is used by exploiting the way physics engine works in various games. In CS:GO it preserves forward momentum and by jumping and strafing left and right when you jump you can increase your speed and be able to traverse the map faster. 
 
 [Back to top](#Design-Documents)
