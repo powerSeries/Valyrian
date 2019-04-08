@@ -10,7 +10,7 @@
 - [Test Join Game Screen](#Test-Join-Game-Screen)
 - [Test Picking Up Weapons](#Test-Picking-Up-Weapons)
 - [Test Firing a Weapon](#Test-Firing-a-Weapons)
-- [Test Aim Down Sight](#Test-Aim-Down-Sight)
+- [Test Aiming Down Sight](#Test-Aiming-Down-Sight)
 
 
 
