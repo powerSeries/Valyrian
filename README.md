@@ -38,6 +38,7 @@ is to be the last man standing.
 # Sprint 3
 
 - [Product Backlog](https://docs.google.com/spreadsheets/d/1NJ3w4OmEa107pmdiB-9LuKJW2Jc6jOqnqPaMKcuhT1o/edit?usp=sharing)
+- [Requirements](https://docs.google.com/spreadsheets/d/1kNBC-PaqTekk6iC0a8yWr35GvO_fCG8NWrc9WcxG8iA/edit?usp=sharing)
 - [Sprint Backlog](https://valyrian.myjetbrains.com/youtrack/agiles/103-2/104-4)
   - [Burndown Chart](https://valyrian.myjetbrains.com/youtrack/agiles/103-2/104-4?chart)
 - [Design Documents](https://github.com/powerSeries/Valyrian/tree/develop/DesignDocuments)
