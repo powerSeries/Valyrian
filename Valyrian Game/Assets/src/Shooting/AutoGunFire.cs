@@ -8,7 +8,11 @@ public class AutoGunFire : MonoBehaviour
     public float fireRate = .5f;
     public float weaponRange = 5f;
     public float hitForce = 100f;
-    public int recoil = 0;
+    public int Recoil = 0;
+    public int ClipReserve = 10;
+
+    public AutoReload ReloadScript;
+    //public CharacterVitality PlayerObject;
     public Transform gunEnd;
 
     private Camera fpsCam;
@@ -31,6 +35,8 @@ public class AutoGunFire : MonoBehaviour
 
     private void InitializeComponents()
     {
+        ReloadScript = GetComponent<AutoReload>();
+        //PlayerObject = GetComponent<CharacterVitality>();
         laserLine = GetComponent<LineRenderer>();
         gunAudio = GetComponent<AudioSource>();
         fpsCam = GetComponentInParent<Camera>();
@@ -66,18 +72,32 @@ public class AutoGunFire : MonoBehaviour
 
     private void FireGunWhileAiming()
     {
-        SetNextFireTime();
-
-        StartCoroutine(ShotEffectSights());
-
-        RayCastDetection();
+        if (ClipAmmoLeft())
+        {
+            SetNextFireTime();
+            StartCoroutine(ShotEffectSights());
+            RayCastDetection();
+        }
     }
 
     private void FireGunWithoutAiming()
     {
-        SetNextFireTime();
-        StartCoroutine(ShotEffect());
-        RayCastDetection();
+        if (ClipAmmoLeft())
+        {
+            SetNextFireTime();
+            StartCoroutine(ShotEffect());
+            RayCastDetection();
+        }
+    }
+
+    private bool ClipAmmoLeft()
+    {
+        //Is there ammo left in the clip
+        if (ClipReserve > 0)
+        {
+            return true;
+        }
+        return false;
     }
 
     private void RayCastDetection()
@@ -156,25 +176,35 @@ public class AutoGunFire : MonoBehaviour
         //Player Object Variant Rotation.x += recoil;
     }
 
-    private IEnumerator ShotEffect()
+    private void EnableDebugRaycastLine()
+    {
+        laserLine.enabled = true;
+    }
+
+    private void DisableDebugRaycastLine()
+    {
+        laserLine.enabled = false;
+    }
+
+    private void FireGun()
     {
         gunAudio.Play();
-
-        laserLine.enabled = true;
         ApplyRecoil();
+    }
+
+    private IEnumerator ShotEffect()
+    {
+        //shoot the gun normal
+        FireGun();
         GetComponent<Animation>().Play("Recoil");
         yield return shotDuration;
-        laserLine.enabled = false;
     }
 
     private IEnumerator ShotEffectSights()
     {
-        gunAudio.Play();
-
-        laserLine.enabled = true;
-        ApplyRecoil();
+        //shoot the gun aiming down the sights
+        FireGun();
         GetComponent<Animation>().Play("RecoilSights");
         yield return shotDuration;
-        laserLine.enabled = false;
     }
 }

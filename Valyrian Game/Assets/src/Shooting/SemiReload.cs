@@ -6,16 +6,15 @@ public class SemiReload : MonoBehaviour
 {
     public AudioSource ReloadSound;
     public GameObject Reticle;
-    //public GameObject MechanicsObject;
     public int ClipSize = 10;
     public int ClipCount;
     public int TotalCount;
     public int ReloadAvailable;
     public SemiGunFire GunObject;
-    public CharacterVitality CharacterObject;
 
     void Start()
     {
+        ClipCount = 0;
         InitiateObjects();
     }
      
@@ -28,14 +27,15 @@ public class SemiReload : MonoBehaviour
 
     private void InitiateObjects()
     {
+        //semigunfire object for semi guns
         GunObject = GetComponent<SemiGunFire>();
-        CharacterObject = GetComponent<CharacterVitality>();
+        //CharacterObject = GetComponent<CharacterVitality>();
     }
 
     private void GetAmmoCounts()
     {
-        ClipCount = CharacterObject.LoadedAmmoCount;
-        TotalCount = CharacterObject.TotalAmmoCount;
+        //ClipCount = CharacterObject.LoadedAmmoCount;
+        //TotalCount = CharacterObject.TotalAmmoCount;
     }
 
     private void CheckIfReloadAvailable()
@@ -77,14 +77,16 @@ public class SemiReload : MonoBehaviour
 
     private void LastReload()
     {
-        CharacterObject.LoadedAmmoCount += TotalCount;
-        CharacterObject.TotalAmmoCount -= TotalCount;
+        //only one reload left
+        //CharacterObject.LoadedAmmoCount += TotalCount;
+        //CharacterObject.TotalAmmoCount -= TotalCount;
     }
 
     private void AnotherReload()
     {
-        CharacterObject.LoadedAmmoCount += ReloadAvailable;
-        CharacterObject.TotalAmmoCount -= ReloadAvailable;
+        //enough reserve for more than a single reload
+        //CharacterObject.LoadedAmmoCount += ReloadAvailable;
+        //CharacterObject.TotalAmmoCount -= ReloadAvailable;
     }
 
     private bool PressedReloadButton()
@@ -98,6 +100,7 @@ public class SemiReload : MonoBehaviour
 
     private bool AnyReloadAvailable()
     {
+        //is there a reload available?
         if (ReloadAvailable >= 1)
         {
             return true;
@@ -107,17 +110,22 @@ public class SemiReload : MonoBehaviour
 
     IEnumerator EnableScripts()
     {
+        //reenable scripts to update
         yield return new WaitForSeconds(1.1f);
         GunObject.enabled = true;
         Reticle.SetActive(true);
-        //MechanicsObject.SetActive(true);
+    }
+
+    private void DisableScripts()
+    {
+        //disable scripts so they stop updating
+        GunObject.enabled = false;
+        Reticle.SetActive(false);
     }
 
     void ActionReload()
     {
-        GunObject.enabled = false;
-        Reticle.SetActive(false);
-        //MechanicsObject.SetActive(false);
+        DisableScripts();
         ReloadSound.Play();
         GetComponent<Animation>().Play("Reload");
     }

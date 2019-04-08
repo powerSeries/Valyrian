@@ -39,6 +39,8 @@ public class ColliderController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerObject = GetComponent<CharacterVitality>();
+
         ammoCount = PlayerObject.TotalAmmoCount;
 
         shieldCount = PlayerObject.ShieldCount;
