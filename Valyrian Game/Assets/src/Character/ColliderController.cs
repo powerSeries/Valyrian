@@ -132,6 +132,12 @@ public class ColliderController : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// This functions is used to update the players shield bar when they
+    /// begin to collect shield packs. It will begin to fill up a baby blue
+    /// bar right on top of where the health bar is at. Changes the X scale component
+    /// of the image
+    /// </summary>
     void UpdateShieldBar()
     {
         float ratio = (float)shieldCount / MAX_SHIELD;
