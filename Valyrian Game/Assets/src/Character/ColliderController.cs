@@ -5,10 +5,19 @@ using UnityEngine.UI;
 
 public class ColliderController : MonoBehaviour
 {
+    //List of possible weapons user can use 
+    public GameObject M4A1;
+    public GameObject AK47;
+    public GameObject SAR;
+    public GameObject M9;
+
     //MAX amount of Shield a player can have
     private const int MAX_SHIELD = 100;
     private const int SHIELD_AMOUNT = 25;
-    private const int AMMO_AMOUNT = 20;
+    private const int AMMO_AMOUNT = 15;
+
+    //CharacterVitality is used for getting the objects health
+    public CharacterVitality PlayerObject;
 
     //text object to display ammo amount
     public Text ammoText;
@@ -24,24 +33,32 @@ public class ColliderController : MonoBehaviour
     //Checks to see if the player shield is full
     private bool IsShieldFull;
 
+    //Checks to see if the player is colliding with a weapon
+    private bool IsWeapon;
+
     // Start is called before the first frame update
     void Start()
-    {   
-        //initilize ammo to zero
-        ammoCount = 0;
+    {
+        ammoCount = PlayerObject.TotalAmmoCount;
 
-        //initialize shield to zero
-        shieldCount = 0;
+        shieldCount = PlayerObject.ShieldCount;
 
         //changes the value of the text to current ammo amount
-
         SetCountText("Ammo");
 
+        UpdateShieldBar();
+    }
 
-
-        UpdateHealthBar();
-
-        
+    /// <summary>
+    /// Sets the Weapons attached the player model to be inactive this
+    /// is to ensure that no player starts with a weapon.
+    /// </summary>
+    void SetWeaponsInactive()
+    {
+        M4A1.SetActive(false);
+        AK47.SetActive(false);
+        SAR.SetActive(false);
+        M9.SetActive(false);
     }
 
     /// <summary>
@@ -50,11 +67,16 @@ public class ColliderController : MonoBehaviour
     /// it is 'Ammo' or 'Shield' it will increase the count of what that object
     /// represents by a fixed value. Then it will change what value is displayed on the
     /// screen.
+    /// 
+    /// It also checks if it is possible for a player to be able to pick up a weapon
+    /// This check was in place because of a occuring issue that when you pick up a shield or ammo
+    /// it would make your weapon disappear
     /// </summary>
     /// <param name="other"></param>
     void OnTriggerEnter(Collider other)
     {
         SetIsFull();
+
 
         if (other.gameObject.CompareTag("Ammo"))
         {
@@ -63,27 +85,83 @@ public class ColliderController : MonoBehaviour
             SetCountText(other.tag);
         }
         
+
         if(!IsShieldFull)
         {
             if (other.gameObject.CompareTag("Shield"))
             {
                 other.gameObject.SetActive(false);
+
                 ShieldCalculator(shieldCount);
-                UpdateHealthBar();
+                UpdateShieldBar();
                 SetCountText(other.tag);
             }
-
-            
         }
+
+        if(WeaponCheck(other))
+        {
+            PossibleWeapon(other);
+        }
+        
     }
 
-    void UpdateHealthBar()
+    /// <summary>
+    /// Used to check to see if the player is colliding with a weapon
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns></returns>
+    bool WeaponCheck(Collider other)
     {
-        float ratio = (float) shieldCount / MAX_SHIELD;
-        
-        currentShieldBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
+        if (other.gameObject.CompareTag("M4A1") || other.gameObject.CompareTag("AK47") || other.gameObject.CompareTag("M9") || other.gameObject.CompareTag("SAR"))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
 
-        shieldText.text = (ratio * 100).ToString("0");
+
+    /// <summary>
+    /// This weapon determines which weapon to set as the active sweapon for the player
+    /// </summary>
+    /// <param name="weapon"></param>
+    void PossibleWeapon(Collider weapon)
+    {
+        SetWeaponsInactive();
+
+        if (weapon.gameObject.CompareTag("AK47"))
+        {
+            AK47.SetActive(true);
+        }
+        else if(weapon.gameObject.CompareTag("M4A1"))
+        {
+            M4A1.SetActive(true);
+        }
+        else if(weapon.gameObject.CompareTag("M9"))
+        {
+            M9.SetActive(true);
+        }
+        else if(weapon.gameObject.CompareTag("SAR"))
+        {
+            SAR.SetActive(true);
+        }
+    }
+    /// <summary>
+    /// This function changes the value of the amount of
+    /// ammo or shield the player has. Depeding on the tag
+    /// the function will update the value. 
+    /// </summary>
+    /// <param name="tag"></param>
+    void SetCountText(string tag)
+    {
+        if (tag == "Ammo")
+        {
+            ammoText.text = ammoCount.ToString();
+        }
+        else if (tag == "Shield")
+        {
+            shieldText.text = shieldCount.ToString();
+        }
     }
 
     /// <summary>
@@ -98,32 +176,13 @@ public class ColliderController : MonoBehaviour
     {
         int differenceToFull = Mathf.Abs(currentShield - MAX_SHIELD);
 
-        if(differenceToFull >= SHIELD_AMOUNT)
+        if (differenceToFull >= SHIELD_AMOUNT)
         {
             shieldCount += SHIELD_AMOUNT;
         }
         else if (differenceToFull < SHIELD_AMOUNT)
         {
             shieldCount += differenceToFull;
-        }
-    }
-
-
-    /// <summary>
-    /// This function changes the value of the amount of
-    /// ammo or shield the player has. Depeding on the tag
-    /// the function will update the value. 
-    /// </summary>
-    /// <param name="tag"></param>
-    void SetCountText(string tag)
-    {
-        if (tag == "Ammo")
-        {
-            ammoText.text = ammoCount.ToString();
-        }
-        if (tag == "Shield")
-        {
-            shieldText.text = shieldCount.ToString("0");
         }
     }
 
@@ -141,6 +200,21 @@ public class ColliderController : MonoBehaviour
         {
             IsShieldFull = false;
         }
-            
+
+    }
+
+    /// <summary>
+    /// This functions is used to update the players shield bar when they
+    /// begin to collect shield packs. It will begin to fill up a baby blue
+    /// bar right on top of where the health bar is at. Changes the X scale component
+    /// of the image
+    /// </summary>
+    void UpdateShieldBar()
+    {
+        float ratio = (float)shieldCount / MAX_SHIELD;
+
+        currentShieldBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
+
+        shieldText.text = (ratio * 100).ToString("0");
     }
 }
