@@ -9,7 +9,7 @@ public class AutoGunFire : MonoBehaviour
     public float weaponRange = 5f;
     public float hitForce = 100f;
     public int Recoil = 0;
-    public int ClipReserve = 10;
+    public int ClipReserve;
 
     public AutoReload ReloadScript;
     //public CharacterVitality PlayerObject;
@@ -26,11 +26,13 @@ public class AutoGunFire : MonoBehaviour
     void Start()
     {
         InitializeComponents();
+        ClipReserve = ReloadScript.ClipCount;
     }
 
     void Update()
     {
         CheckInput();
+        ReloadScript.ClipCount = ClipReserve;
     }
 
     private void InitializeComponents()
@@ -74,6 +76,7 @@ public class AutoGunFire : MonoBehaviour
     {
         if (ClipAmmoLeft())
         {
+            ExpendAmmo();
             SetNextFireTime();
             StartCoroutine(ShotEffectSights());
             RayCastDetection();
@@ -84,10 +87,16 @@ public class AutoGunFire : MonoBehaviour
     {
         if (ClipAmmoLeft())
         {
+            ExpendAmmo();
             SetNextFireTime();
             StartCoroutine(ShotEffect());
             RayCastDetection();
         }
+    }
+
+    private void ExpendAmmo()
+    {
+        --ClipReserve;
     }
 
     private bool ClipAmmoLeft()

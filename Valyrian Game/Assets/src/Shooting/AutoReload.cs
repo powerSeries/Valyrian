@@ -6,15 +6,17 @@ public class AutoReload : MonoBehaviour
 {
     public AudioSource ReloadSound;
     public GameObject Reticle;
-    public int ClipSize = 10;
+    public int ClipSize = 10; //default 10 initiate
     public int ClipCount;
-    public int TotalCount;
+    public int TotalCount = 0;
     public int ReloadAvailable;
     public AutoGunFire GunObject;
 
+    public bool Reloading = false;
+
     void Start()
     {
-        ClipCount = 0;
+        ClipCount = ClipSize;
         InitiateObjects();
     }
 
@@ -38,6 +40,15 @@ public class AutoReload : MonoBehaviour
         //TotalCount = CharacterObject.TotalAmmoCount;
     }
 
+    bool AmmoToShoot()
+    {
+        if (ClipCount > 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
     private void CheckIfReloadAvailable()
     {
         if (TotalCount == 0)
@@ -47,6 +58,12 @@ public class AutoReload : MonoBehaviour
         else
         {
             ReloadAvailable = ClipSize - ClipCount;
+
+            if (ReloadAvailable > TotalCount)
+            {
+                ReloadAvailable = TotalCount;
+            }
+
         }
     }
 
@@ -77,16 +94,18 @@ public class AutoReload : MonoBehaviour
 
     private void LastReload()
     {
-        //only one reload left
-        //CharacterObject.LoadedAmmoCount += TotalCount;
-        //CharacterObject.TotalAmmoCount -= TotalCount;
+        //only enough reserve for a single reload
+        ClipCount += TotalCount;
+        TotalCount = 0;
+        GunObject.ClipReserve = ClipCount;
     }
 
     private void AnotherReload()
     {
         //enough reserve for more than a single reload
-        //CharacterObject.LoadedAmmoCount += ReloadAvailable;
-        //CharacterObject.TotalAmmoCount -= ReloadAvailable;
+        ClipCount += ReloadAvailable;
+        TotalCount -= ReloadAvailable;
+        GunObject.ClipReserve = ClipCount;
     }
 
     private bool PressedReloadButton()
@@ -128,5 +147,6 @@ public class AutoReload : MonoBehaviour
         DisableScripts();
         ReloadSound.Play();
         GetComponent<Animation>().Play("Reload");
+        Reloading = true;
     }
 }
