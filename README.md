@@ -44,4 +44,4 @@ is to be the last man standing.
 - [Design Documents](https://github.com/powerSeries/Valyrian/tree/develop/DesignDocuments)
 - [Source Code](https://github.com/powerSeries/Valyrian/tree/master/Valyrian%20Game/Assets/src)
 - [Test Cases](https://github.com/powerSeries/Valyrian/tree/develop/Test%20Approach)
-- Product Demonstration [1 - (Developer's Tools)](https://youtu.be/LgWb3166le4) [2 - (Weapon Animations)](https://youtu.be/vm0qR0zDJuo)
+- Product Demonstration [1 - (Developer's Tools)](https://youtu.be/LgWb3166le4) | [2 - (Weapon Animations)](https://youtu.be/vm0qR0zDJuo)
