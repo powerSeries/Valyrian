@@ -6,6 +6,12 @@
 - [Data Design](#Data-Design)
 - [Business Rules](#Business-Rules)
 - [User Interface](#User-Interface)
+- [Security](#Security)
+- [Performance](#Performance)
+- [Scalability](#Scalability)
+- [Interoperability](#Interoperability)
+- [Input/Output](#Input/Output)
+- [Error Processing](#Error-Processing)
 - [Build-vs-Buy Decisions](#Build-vs-Buy-Decisions)
 
 
@@ -73,8 +79,6 @@ For this game we are not using any database to store any of objects. All the obj
   
 - The ammo a player collects works across all guns. In most games you have to find ammos specific to the weapon that you find, so in games like Fortnite or Call of Duty if you find a shotgun you have to find shotgun shells for it. This gives player extra stress about being careful with the current resources they have. By removing that stress the player can focus more on the game. 
 
-- Player are not allowed to ADS (Aim Down Sight) on the weapon they are holding. This is something that is used throughout the Counter-Strike series, it adds a different level of skill when not being able to ADS that we wanted to recreate.
-
 - Players are not allowed to bunny hop (B-hop), this is a technique that is used by exploiting the way physics engine works in various games. In CS:GO it preserves forward momentum and by jumping and strafing left and right when you jump you can increase your speed and be able to traverse the map faster. 
 
 [Back to top](#Design-Documents)
@@ -88,6 +92,49 @@ For this game we are not using any database to store any of objects. All the obj
 
 [Back to top](#Design-Documents)
 
+## Security
+
+N/A: Player information and collected data is stored on player’s own computer. Since gameplay is targeted towards casual interaction instead of regulated competitiveness, ensuring data is unmodified is not a priority.
+
+[Back to top](#Design-Documents)
+
+
+## Performance
+
+Valyrian Game runs smoothly while performing various animations and calculations. Up to 4 players should be able to interact without any noticeable drop in performance
+
+[Back to top](#Design-Documents)
+
+## Scalability
+
+The ability to handle more players and guns than originally developed should be made easy through generalized scripts that don’t need to be recoded or redone.
+
+[Back to top](#Design-Documents)
+
+## Interoperability
+
+4 players should be able to connect to a single server that places them in the same game. Each player’s game view is drawn in the same manner, and all actions made by the player in the game can be witnessed by the other players.
+
+[Back to top](#Design-Documents)
+
+## Input/Output
+
+Keyboard and mouse controls are taken for input. “Left-Mouse Button” should fire the weapon; “Right-Mouse Button” should aim down the iron sights of the gun; “r” should reload the gun if allowed; the “w,” “s,” “d,” and “a” keys direct travel; the “space bar” jumps; and “shift” increases the walking speed to running speed. In addition, the opening UI and game lobby will take inputs to join, create, start, and leave games. Input is taken to the server and returned to other players in the game as output, displaying the actions committed from the input.
+
+[Back to top](#Design-Documents)
+
+## Error Processing
+
+Majority of errors are handled through in-game testing.
+
+[Back to top](#Design-Documents)
+
+## Fault Tolerance
+
+Missing objects will allow the game to run. In the case of server connectivity or synchronous errors, the game should fail.
+
+[Back top top](#Design-Documents)
+
 ## Build-vs-Buy Decisions
 
 ### ProBuilder
@@ -95,6 +142,8 @@ For this game we are not using any database to store any of objects. All the obj
 Probuilder allows you to edit models within the editor with advanced features. It allows you to manipulate a list of objects any way that you want to. You extrude the object, subdivide some a face of the object. As well as being able to manipulate the object between either face of the object or its vertices. It also comes with some preset objects such as 'Stairs' it allows you to edit property of by determing how many steps you want the staircase to have. It has been very useful in creating the main building that is located at the certain of the level. 
 
 ### Photon Server
+
+Allows us to add multiplayer capabilities to our game by providing us with a free server for us to load in our level and assets. It also is programmed to show player moments in real time, thus allowing for almost no latency between the player inputs and the server.
 
 ### Ensenasoft
 
