@@ -9,7 +9,7 @@ public class SemiGunFire : MonoBehaviour
     public float weaponRange = 5f;
     public float hitForce = 100f;
     public int Recoil = 0;
-    public int ClipReserve = 10;
+    public int ClipReserve;
 
     public SemiReload ReloadScript;
     //public CharacterVitality PlayerObject;
@@ -26,11 +26,13 @@ public class SemiGunFire : MonoBehaviour
     void Start()
     {
         InitializeComponents();
+        ClipReserve = ReloadScript.ClipCount;
     }
 
     void Update()
     {
         CheckInput();
+        ReloadScript.ClipCount = ClipReserve;
     }
 
     private void InitializeComponents()
@@ -48,7 +50,7 @@ public class SemiGunFire : MonoBehaviour
         {
             AimDownSights();
         }
-        else if(!PressingAimButton() && aiming)
+        else if (!PressingAimButton() && aiming)
         {
             CancelSights();
         }
@@ -60,11 +62,11 @@ public class SemiGunFire : MonoBehaviour
 
     public void CheckIfFiring()
     {
-        if (PressedFireButton() && TimeToShoot() && PressingAimButton())
+        if (PressingFireButton() && TimeToShoot() && PressingAimButton())
         {
             FireGunWhileAiming();
         }
-        else if (PressedFireButton() && TimeToShoot())
+        else if (PressingFireButton() && TimeToShoot())
         {
             FireGunWithoutAiming();
         }
@@ -74,6 +76,7 @@ public class SemiGunFire : MonoBehaviour
     {
         if (ClipAmmoLeft())
         {
+            ExpendAmmo();
             SetNextFireTime();
             StartCoroutine(ShotEffectSights());
             RayCastDetection();
@@ -84,16 +87,22 @@ public class SemiGunFire : MonoBehaviour
     {
         if (ClipAmmoLeft())
         {
+            ExpendAmmo();
             SetNextFireTime();
             StartCoroutine(ShotEffect());
             RayCastDetection();
         }
     }
 
+    private void ExpendAmmo()
+    {
+        --ClipReserve;
+    }
+
     private bool ClipAmmoLeft()
     {
         //Is there ammo left in the clip
-        if(ClipReserve > 0)
+        if (ClipReserve > 0)
         {
             return true;
         }
@@ -118,9 +127,9 @@ public class SemiGunFire : MonoBehaviour
 
     }
 
-    public bool PressedFireButton()
+    public bool PressingFireButton()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             return true;
         }

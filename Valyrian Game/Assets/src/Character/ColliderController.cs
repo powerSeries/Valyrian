@@ -16,6 +16,8 @@ public class ColliderController : MonoBehaviour
     private const int SHIELD_AMOUNT = 25;
     private const int AMMO_AMOUNT = 15;
 
+    private int healthAmount = 100;
+
     //CharacterVitality is used for getting the objects health
     public CharacterVitality PlayerObject;
 
@@ -25,6 +27,9 @@ public class ColliderController : MonoBehaviour
     //text object to display shield amount
     public Text shieldText;
     public Image currentShieldBar;
+
+    public Text healthText;
+    public Image currentHealthBar;
 
     //counters for the ammo/shield amount
     private int ammoCount;
@@ -39,6 +44,9 @@ public class ColliderController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        shieldText.text = healthAmount.ToString();
+
         PlayerObject = GetComponent<CharacterVitality>();
 
         ammoCount = PlayerObject.TotalAmmoCount;
@@ -49,6 +57,42 @@ public class ColliderController : MonoBehaviour
         SetCountText("Ammo");
 
         UpdateShieldBar();
+    }
+
+    void Update()
+    {
+        if (M4A1.GetComponent<AutoReload>().Reloading)
+        {
+            M4A1.GetComponent<AutoReload>().Reloading = false;
+            ammoCount = M4A1.GetComponent<AutoReload>().TotalCount;
+            ammoText.text = ammoCount.ToString();
+        }
+        else if (AK47.GetComponent<AutoReload>().Reloading)
+        {
+            AK47.GetComponent<AutoReload>().Reloading = false;
+            ammoCount = AK47.GetComponent<AutoReload>().TotalCount;
+            ammoText.text = ammoCount.ToString();
+        } else if (SAR.GetComponent<SemiReload>().Reloading)
+        {
+            SAR.GetComponent<SemiReload>().Reloading = false;
+            ammoCount = SAR.GetComponent<SemiReload>().TotalCount;
+            ammoText.text = ammoCount.ToString();
+        } else if (M9.GetComponent<SemiReload>().Reloading)
+        {
+            M9.GetComponent<SemiReload>().Reloading = false;
+            ammoCount = M9.GetComponent<SemiReload>().TotalCount;
+            ammoText.text = ammoCount.ToString();
+        }
+
+        UpdateTotalCounts();
+    }
+
+    void UpdateTotalCounts()
+    {
+        M9.GetComponent<SemiReload>().TotalCount = ammoCount;
+        SAR.GetComponent<SemiReload>().TotalCount = ammoCount;
+        AK47.GetComponent<AutoReload>().TotalCount = ammoCount;
+        M4A1.GetComponent<AutoReload>().TotalCount = ammoCount;
     }
 
     /// <summary>
@@ -84,6 +128,14 @@ public class ColliderController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             ammoCount += AMMO_AMOUNT;
+
+            //added 4/18/2019
+            M4A1.GetComponent<AutoReload>().TotalCount += AMMO_AMOUNT;
+            AK47.GetComponent<AutoReload>().TotalCount += AMMO_AMOUNT;
+            SAR.GetComponent<SemiReload>().TotalCount += AMMO_AMOUNT;
+            M9.GetComponent<SemiReload>().TotalCount += AMMO_AMOUNT;
+            //end
+
             SetCountText(other.tag);
         }
         
@@ -134,18 +186,22 @@ public class ColliderController : MonoBehaviour
         if (weapon.gameObject.CompareTag("AK47"))
         {
             AK47.SetActive(true);
+            AK47.GetComponent<AutoReload>().ClipCount = 30; //AK47.GetComponent<AutoReload>().ClipSize;
         }
         else if(weapon.gameObject.CompareTag("M4A1"))
         {
             M4A1.SetActive(true);
+            M4A1.GetComponent<AutoReload>().ClipCount = 20; //M4A1.GetComponent<AutoReload>().ClipSize;
         }
         else if(weapon.gameObject.CompareTag("M9"))
         {
             M9.SetActive(true);
+            M9.GetComponent<SemiReload>().ClipCount = 10; //M9.GetComponent<SemiReload>().ClipSize;
         }
         else if(weapon.gameObject.CompareTag("SAR"))
         {
             SAR.SetActive(true);
+            SAR.GetComponent<SemiReload>().ClipCount = 1; //SAR.GetComponent<SemiReload>().ClipSize;
         }
     }
     /// <summary>
